@@ -1,566 +1,634 @@
 <!DOCTYPE html>
 <html lang="ja" dir="ltr">
+
 <head prefix="og: http://ogp.me/ns# website: http://ogp.me/ns/website#">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="CODE-DはDelightなプログラミング教育サービスです。">
-  <meta property="og:title"       content="CODE-D">
-  <meta property="og:description" content="CODE-DはDelightなプログラミング教育サービスです。" />
-  <meta property="og:type"        content="website" />
-  <meta property="og:url"         content="https://code-d.jp/" />
-  <meta property="og:image"       content="img/banner2.png" />
-  <meta name="twitter:card"       content="CODE-DはDelightなプログラミング教育サービスです。" />
-  <meta name="twitter:site"       content="https://code-d.jp/" />
-  <meta name="twitter:creator"    content="@codedjp" />
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
-   <style media="screen">
-
-     .material-icons.large-size {
-     	font-size: 64px;
-     }
-     .works-row {
-       margin-top: 30px;
-       margin-bottom: 30px;
-     }
-     .container {
-       max-width: 800px; }
-     .header {
-       margin-top: 6rem;
-       text-align: center; }
-     .value-prop {
-       margin-top: 1rem; }
-     .value-props {
-       margin-top: 4rem;
-       margin-bottom: 4rem; }
-     .docs-header {
-       text-transform: uppercase;
-       font-size: 1.4rem;
-       letter-spacing: .2rem;
-       font-weight: 600; }
-     .docs-section {
-       border-top: 1px solid #eee;
-       padding: 4rem 0;
-       margin-bottom: 0;}
-     .value-img {
-       display: block;
-       text-align: center;
-       margin: 2.5rem auto 0; }
-     .example-grid .column,
-     .example-grid .columns {
-       background: #EEE;
-       text-align: center;
-       border-radius: 4px;
-       font-size: 1rem;
-       text-transform: uppercase;
-       height: 30px;
-       line-height: 30px;
-       margin-bottom: .75rem;
-       font-weight: 600;
-       letter-spacing: .1rem; }
-     .docs-example .row,
-     .docs-example.row,
-     .docs-example form {
-       margin-bottom: 0; }
-     .docs-example h1,
-     .docs-example h2,
-     .docs-example h3,
-     .docs-example h4,
-     .docs-example h5,
-     .docs-example h6 {
-       margin-bottom: 1rem; }
-     .heading-font-size {
-       font-size: 1.2rem;
-       color: #999;
-       letter-spacing: normal; }
-     .code-example {
-       margin-top: 1.5rem;
-       margin-bottom: 0; }
-     .code-example-body {
-       white-space: pre;
-       word-wrap: break-word }
-     .example {
-       position: relative;
-       margin-top: 4rem; }
-     .example-header {
-       font-weight: 600;
-       margin-top: 1.5rem;
-       margin-bottom: .5rem; }
-     .example-description {
-       margin-bottom: 1.5rem; }
-     .example-screenshot-wrapper {
-       display: block;
-       position: relative;
-       overflow: hidden;
-       border-radius: 6px;
-       border: 1px solid #eee;
-       height: 250px; }
-     .example-screenshot {
-       width: 100%;
-       height: auto; }
-     .example-screenshot.coming-soon {
-       width: auto;
-       position: absolute;
-       background: #eee;
-       top: 5px;
-       right: 5px;
-       bottom: 5px;
-       left: 5px; }
-     .navbar {
-       display: none; }
-     table.service-list {
-       display: none;
-     }
-
-     /* Larger than phone */
-     @media (min-width: 550px) {
-       .header {
-         margin-top: 18rem; }
-       .value-props {
-         margin-top: 9rem;
-         margin-bottom: 7rem; }
-       .value-img {
-         margin-bottom: 1rem; }
-       .example-grid .column,
-       .example-grid .columns {
-         margin-bottom: 1.5rem; }
-       .docs-section {
-         padding: 6rem 0; }
-       .example-send-yourself-copy {
-         float: right;
-         margin-top: 12px; }
-       .example-screenshot-wrapper {
-         position: absolute;
-         width: 48%;
-         height: 100%;
-         left: 0;
-         max-height: none; }
-       table.service-list {
-         display: table;
-       }
-       ul.service-list {
-         display: none;
-       }
-     }
-
-     /* Larger than tablet */
-     @media (min-width: 750px) {
-       /* Navbar */
-       .navbar + .docs-section {
-         border-top-width: 0; }
-       .navbar,
-       .navbar-spacer {
-         display: block;
-         width: 100%;
-         height: 6.5rem;
-         background: #fff;
-         z-index: 99;
-         border-top: 1px solid #eee;
-         border-bottom: 1px solid #eee; }
-       .navbar-spacer {
-         display: none; }
-       .navbar > .container {
-         width: 100%; }
-       .navbar-list {
-         list-style: none;
-         margin-bottom: 0; }
-       .navbar-item {
-         position: relative;
-         float: left;
-         margin-bottom: 0; }
-       .navbar-link {
-         text-transform: uppercase;
-         font-size: 11px;
-         font-weight: 600;
-         letter-spacing: .2rem;
-         margin-right: 35px;
-         text-decoration: none;
-         line-height: 6.5rem;
-         color: #222; }
-       .navbar-link.active {
-         color: #33C3F0; }
-       .has-docked-nav .navbar {
-         position: fixed;
-         top: 0;
-         left: 0; }
-       .has-docked-nav .navbar-spacer {
-         display: block; }
-       /* Re-overiding the width 100% declaration to match size of % based container */
-       .has-docked-nav .navbar > .container {
-         width: 80%; }
-
-       /* Popover */
-       .popover.open {
-         display: block;
-       }
-       .popover {
-         display: none;
-         position: absolute;
-         top: 0;
-         left: 0;
-         background: #fff;
-         border: 1px solid #eee;
-         border-radius: 4px;
-         top: 92%;
-         left: -50%;
-         -webkit-filter: drop-shadow(0 0 6px rgba(0,0,0,.1));
-            -moz-filter: drop-shadow(0 0 6px rgba(0,0,0,.1));
-                 filter: drop-shadow(0 0 6px rgba(0,0,0,.1)); }
-       .popover-item:first-child .popover-link:after,
-       .popover-item:first-child .popover-link:before {
-         bottom: 100%;
-         left: 50%;
-         border: solid transparent;
-         content: " ";
-         height: 0;
-         width: 0;
-         position: absolute;
-         pointer-events: none; }
-       .popover-item:first-child .popover-link:after {
-         border-color: rgba(255, 255, 255, 0);
-         border-bottom-color: #fff;
-         border-width: 10px;
-         margin-left: -10px; }
-       .popover-item:first-child .popover-link:before {
-         border-color: rgba(238, 238, 238, 0);
-         border-bottom-color: #eee;
-         border-width: 11px;
-         margin-left: -11px; }
-       .popover-list {
-         padding: 0;
-         margin: 0;
-         list-style: none; }
-       .popover-item {
-         padding: 0;
-         margin: 0; }
-       .popover-link {
-         position: relative;
-         color: #222;
-         display: block;
-         padding: 8px 20px;
-         border-bottom: 1px solid #eee;
-         text-decoration: none;
-         text-transform: uppercase;
-         font-size: 1.0rem;
-         font-weight: 600;
-         text-align: center;
-         letter-spacing: .1rem; }
-       .popover-item:first-child .popover-link {
-         border-radius: 4px 4px 0 0; }
-       .popover-item:last-child .popover-link {
-         border-radius: 0 0 4px 4px;
-         border-bottom-width: 0; }
-       .popover-link:hover {
-         color: #fff;
-         background: #33C3F0; }
-       .popover-link:hover,
-       .popover-item:first-child .popover-link:hover:after {
-         border-bottom-color: #33C3F0; }
-     }
-   </style>
-   <title>CODE-D</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="CODE-DはDelightなプログラミング教育サービスです。">
+    <meta property="og:title" content="CODE-D">
+    <meta property="og:description" content="CODE-DはDelightなプログラミング教育サービスです。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://code-d.jp/" />
+    <meta property="og:image" content="img/banner2.png" />
+    <meta name="twitter:card" content="CODE-DはDelightなプログラミング教育サービスです。" />
+    <meta name="twitter:site" content="https://code-d.jp/" />
+    <meta name="twitter:creator" content="@codedjp" />
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+    <style media="screen">
+        .material-icons.large-size {
+            font-size: 64px;
+        }
+        
+        .works-row {
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .container {
+            max-width: 800px;
+        }
+        
+        .header {
+            margin-top: 6rem;
+            text-align: center;
+        }
+        
+        .value-prop {
+            margin-top: 1rem;
+        }
+        
+        .value-props {
+            margin-top: 4rem;
+            margin-bottom: 4rem;
+        }
+        
+        .docs-header {
+            text-transform: uppercase;
+            font-size: 1.4rem;
+            letter-spacing: .2rem;
+            font-weight: 600;
+        }
+        
+        .docs-section {
+            border-top: 1px solid #eee;
+            padding: 4rem 0;
+            margin-bottom: 0;
+        }
+        
+        .value-img {
+            display: block;
+            text-align: center;
+            margin: 2.5rem auto 0;
+        }
+        
+        .example-grid .column,
+        .example-grid .columns {
+            background: #EEE;
+            text-align: center;
+            border-radius: 4px;
+            font-size: 1rem;
+            text-transform: uppercase;
+            height: 30px;
+            line-height: 30px;
+            margin-bottom: .75rem;
+            font-weight: 600;
+            letter-spacing: .1rem;
+        }
+        
+        .docs-example .row,
+        .docs-example.row,
+        .docs-example form {
+            margin-bottom: 0;
+        }
+        
+        .docs-example h1,
+        .docs-example h2,
+        .docs-example h3,
+        .docs-example h4,
+        .docs-example h5,
+        .docs-example h6 {
+            margin-bottom: 1rem;
+        }
+        
+        .heading-font-size {
+            font-size: 1.2rem;
+            color: #999;
+            letter-spacing: normal;
+        }
+        
+        .code-example {
+            margin-top: 1.5rem;
+            margin-bottom: 0;
+        }
+        
+        .code-example-body {
+            white-space: pre;
+            word-wrap: break-word
+        }
+        
+        .example {
+            position: relative;
+            margin-top: 4rem;
+        }
+        
+        .example-header {
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: .5rem;
+        }
+        
+        .example-description {
+            margin-bottom: 1.5rem;
+        }
+        
+        .example-screenshot-wrapper {
+            display: block;
+            position: relative;
+            overflow: hidden;
+            border-radius: 6px;
+            border: 1px solid #eee;
+            height: 250px;
+        }
+        
+        .example-screenshot {
+            width: 100%;
+            height: auto;
+        }
+        
+        .example-screenshot.coming-soon {
+            width: auto;
+            position: absolute;
+            background: #eee;
+            top: 5px;
+            right: 5px;
+            bottom: 5px;
+            left: 5px;
+        }
+        
+        .navbar {
+            display: none;
+        }
+        
+        table.service-list {
+            display: none;
+        }
+        /* Larger than phone */
+        
+        @media (min-width: 550px) {
+            .header {
+                margin-top: 18rem;
+            }
+            .value-props {
+                margin-top: 9rem;
+                margin-bottom: 7rem;
+            }
+            .value-img {
+                margin-bottom: 1rem;
+            }
+            .example-grid .column,
+            .example-grid .columns {
+                margin-bottom: 1.5rem;
+            }
+            .docs-section {
+                padding: 6rem 0;
+            }
+            .example-send-yourself-copy {
+                float: right;
+                margin-top: 12px;
+            }
+            .example-screenshot-wrapper {
+                position: absolute;
+                width: 48%;
+                height: 100%;
+                left: 0;
+                max-height: none;
+            }
+            table.service-list {
+                display: table;
+            }
+            ul.service-list {
+                display: none;
+            }
+        }
+        /* Larger than tablet */
+        
+        @media (min-width: 750px) {
+            /* Navbar */
+            .navbar+.docs-section {
+                border-top-width: 0;
+            }
+            .navbar,
+            .navbar-spacer {
+                display: block;
+                width: 100%;
+                height: 6.5rem;
+                background: #fff;
+                z-index: 99;
+                border-top: 1px solid #eee;
+                border-bottom: 1px solid #eee;
+            }
+            .navbar-spacer {
+                display: none;
+            }
+            .navbar>.container {
+                width: 100%;
+            }
+            .navbar-list {
+                list-style: none;
+                margin-bottom: 0;
+            }
+            .navbar-item {
+                position: relative;
+                float: left;
+                margin-bottom: 0;
+            }
+            .navbar-link {
+                text-transform: uppercase;
+                font-size: 11px;
+                font-weight: 600;
+                letter-spacing: .2rem;
+                margin-right: 35px;
+                text-decoration: none;
+                line-height: 6.5rem;
+                color: #222;
+            }
+            .navbar-link.active {
+                color: #33C3F0;
+            }
+            .has-docked-nav .navbar {
+                position: fixed;
+                top: 0;
+                left: 0;
+            }
+            .has-docked-nav .navbar-spacer {
+                display: block;
+            }
+            /* Re-overiding the width 100% declaration to match size of % based container */
+            .has-docked-nav .navbar>.container {
+                width: 80%;
+            }
+            /* Popover */
+            .popover.open {
+                display: block;
+            }
+            .popover {
+                display: none;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background: #fff;
+                border: 1px solid #eee;
+                border-radius: 4px;
+                top: 92%;
+                left: -50%;
+                -webkit-filter: drop-shadow(0 0 6px rgba(0, 0, 0, .1));
+                -moz-filter: drop-shadow(0 0 6px rgba(0, 0, 0, .1));
+                filter: drop-shadow(0 0 6px rgba(0, 0, 0, .1));
+            }
+            .popover-item:first-child .popover-link:after,
+            .popover-item:first-child .popover-link:before {
+                bottom: 100%;
+                left: 50%;
+                border: solid transparent;
+                content: " ";
+                height: 0;
+                width: 0;
+                position: absolute;
+                pointer-events: none;
+            }
+            .popover-item:first-child .popover-link:after {
+                border-color: rgba(255, 255, 255, 0);
+                border-bottom-color: #fff;
+                border-width: 10px;
+                margin-left: -10px;
+            }
+            .popover-item:first-child .popover-link:before {
+                border-color: rgba(238, 238, 238, 0);
+                border-bottom-color: #eee;
+                border-width: 11px;
+                margin-left: -11px;
+            }
+            .popover-list {
+                padding: 0;
+                margin: 0;
+                list-style: none;
+            }
+            .popover-item {
+                padding: 0;
+                margin: 0;
+            }
+            .popover-link {
+                position: relative;
+                color: #222;
+                display: block;
+                padding: 8px 20px;
+                border-bottom: 1px solid #eee;
+                text-decoration: none;
+                text-transform: uppercase;
+                font-size: 1.0rem;
+                font-weight: 600;
+                text-align: center;
+                letter-spacing: .1rem;
+            }
+            .popover-item:first-child .popover-link {
+                border-radius: 4px 4px 0 0;
+            }
+            .popover-item:last-child .popover-link {
+                border-radius: 0 0 4px 4px;
+                border-bottom-width: 0;
+            }
+            .popover-link:hover {
+                color: #fff;
+                background: #33C3F0;
+            }
+            .popover-link:hover,
+            .popover-item:first-child .popover-link:hover:after {
+                border-bottom-color: #33C3F0;
+            }
+        }
+    </style>
+    <title>CODE-D</title>
 </head>
+
 <body>
-  <div class="container">
-    <section class="header">
-      <h1 class="title">Hello, CODE-D</h1>
-      <div class="value-props row">
-        <div class="four columns value-prop">
-          <i class="material-icons large-size">code</i>
-          <h4>Code</h4>
+    <div class="container">
+        <section class="header">
+            <h1 class="title">CODE-D</h1>
+            <div class="value-props row">
+                <div class="four columns value-prop">
+                    <i class="material-icons large-size">code</i>
+                    <h4>Code</h4>
+                </div>
+                <div class="four columns value-prop">
+                    <i class="material-icons large-size">mood</i>
+                    <h4>Delight</h4>
+                </div>
+                <div class="four columns value-prop">
+                    <i class="material-icons large-size">school</i>
+                    <h4>Education</h4>
+                </div>
+            </div>
+        </section>
+
+        <div class="navbar-spacer"></div>
+        <nav class="navbar">
+            <div class="container">
+                <ul class="navbar-list">
+                    <li class="navbar-item"><a class="navbar-link" href="#works">Works</a></li>
+                    <li class="navbar-item"><a class="navbar-link" href="#services">Services</a></li>
+                    <li class="navbar-item"><a class="navbar-link" href="#relationships">Relationships</a></li>
+                    <li class="navbar-item"><a class="navbar-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="docs-section examples" id="works">
+            <h6 class="docs-header">Works</h6>
+            <div class="row works-row">
+                <div class="one-half column">
+                    <img class="example-screenshot" src="img/gorimepresetV3_TP_V4.jpg">
+                </div>
+                <div class="one-half column">
+                    <h6 class="example-header">IT人材の育成</h6>
+                    <p class="example-description">ITエンジニアの育成や、ビジネスパーソン向けのプログラミング教育を実施しています。経済産業省のレポートには2030年にはIT人材が約59万人不足（最大79万人不足）するという報告もあり、少子高齢社会の進む日本においてIT人材の育成は急務です。プログラミング教育を通じて、仕事を自動化する楽しさを伝えながら、ITを活用できる人材を育成していきます。<br>
+                    </p>
+                </div>
+            </div>
+
+            <div class="row works-row">
+                <div class="one-half column">
+                    <img class="example-screenshot" src="img/text.jpg">
+                </div>
+                <div class="one-half column">
+                    <h6 class="example-header">プログラミング教材づくり</h6>
+                    <p class="example-description">プログラミング学習に必要な教材（テキストや動画、問題集など）を提供しています。プログラミング初学者にとっての学びの敷居を下げるために短時間で効率よく学べる教材づくりをコンセプトにしています。<br>CODE-Dではプログラミング学習動画をUdemyで公開しています。</p>
+                    <a class="button" href="https://www.udemy.com/course/code-php/?referralCode=E4D25BD099285A8CEC0B" target="_blank">Udemy</a>
+                </div>
+            </div>
+
+            <div class="row works-row">
+                <div class="one-half column">
+                    <img class="example-screenshot" src="img/app.png">
+                </div>
+                <div class="one-half column">
+                    <h6 class="example-header">プログラミング学習サービス</h6>
+                    <p class="example-description">オンラインでプログラミングを学ぶサービスを開発しています。2021年春頃のベータリリースに向けて開発を進めています。</p>
+                    <a class="button" href="#" target="_blank" disabled style="text-decoration: line-through">Demo</a>
+                </div>
+            </div>
         </div>
-        <div class="four columns value-prop">
-          <i class="material-icons large-size">mood</i>
-          <h4>Delight</h4>
+
+        <div class="docs-section examples" id="services">
+            <h6 class="docs-header">Services</h6>
+            <p>CODE-Dでは法人向けのプログラミング教育サービスと個人向けのプログラミング教育サービスを提供しています。</p>
+            <ul class="service-list">
+                <li>法人向けサービス</li>
+                <ul>
+                    <li>教材開発</li>
+                    <ul>
+                        <li>研修企画に沿った教材を開発（提供）します。価格：要相談〜</li>
+                    </ul>
+                    <li>講師派遣</li>
+                    <ul>
+                        <li>Webシステム開発、機械学習の研修講師を派遣します。価格：¥100,000〜</li>
+                    </ul>
+                    <li>エンジニア教育</li>
+                    <ul>
+                        <li>開発現場において若手エンジニアの技術習得をサポートします。価格：要相談〜</li>
+                    </ul>
+                </ul>
+                <li>個人向けサービス</li>
+                <ul>
+                    <li>CODE-D ONLINE</li>
+                    <ul>
+                        <li>オンラインで学ぶプログラミング学習サービスです。価格：準備中</li>
+                    </ul>
+                    <li>CODE-D ENGINEER</li>
+                    <ul>
+                        <li>ITエンジニアへの転職を目的としたプログラミング学習支援サービスです。価格：準備中</li>
+                    </ul>
+                    <li>CODE-D ADHOC</li>
+                    <ul>
+                        <li>プログラミングの疑問・悩み相談などの1DAY学習支援サービスです。価格：¥10,000〜</li>
+                    </ul>
+                </ul>
+            </ul>
+
+            <table class="u-full-width service-list">
+                <thead>
+                    <tr>
+                        <th>法人向けサービス</th>
+                        <th>サービス概要</th>
+                        <th>価格</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>教材開発</td>
+                        <td>プログラミング研修用の教材を開発（提供）します。</td>
+                        <td>要相談</td>
+                    </tr>
+                    <tr>
+                        <td>講師派遣</td>
+                        <td>Webシステム開発、機械学習の研修講師を派遣します。</td>
+                        <td>¥100,000〜</td>
+                    </tr>
+                    <tr>
+                        <td>エンジニア教育</td>
+                        <td>開発現場において若手エンジニアの技術習得をサポートします。</td>
+                        <td>要相談</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="u-full-width service-list">
+                <thead>
+                    <tr>
+                        <th>個人向けサービス</th>
+                        <th>サービス概要</th>
+                        <th>価格</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td width="140px">CODE-D ONLINE</td>
+                        <td>オンラインで学ぶプログラミング学習サービスです。</td>
+                        <td>準備中</td>
+                    </tr>
+                    <tr>
+                        <td>CODE-D ENGINEER</td>
+                        <td>ITエンジニアへの転職を目的としたプログラミング学習支援サービスです。</td>
+                        <td>準備中</td>
+                    </tr>
+                    <tr>
+                        <td>CODE-D ADHOC</td>
+                        <td>プログラミングの疑問・悩み相談などの1DAY学習支援サービスです。</td>
+                        <td>¥10,000〜</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-        <div class="four columns value-prop">
-          <i class="material-icons large-size">school</i>
-          <h4>Education</h4>
+
+        <div class="docs-section" id="relationships">
+            <h6 class="docs-header">Business Relationships</h6>
+            <div class="row">
+                <ul>
+                    <li><a href="https://kronos.jp/" target="_blank">株式会社クロノス</a></li>
+                    <ul>
+                        <li><a href="https://www.kronos.jp/open-learning/" target="_blank">法人様向け 2019年度新入社員向け Javaエンジニア集合型研修 講師</a></li>
+                    </ul>
+                </ul>
+            </div>
         </div>
-      </div>
-    </section>
 
-    <div class="navbar-spacer"></div>
-     <nav class="navbar">
-       <div class="container">
-         <ul class="navbar-list">
-           <li class="navbar-item"><a class="navbar-link" href="#works">Works</a></li>
-           <li class="navbar-item"><a class="navbar-link" href="#services">Services</a></li>
-           <li class="navbar-item"><a class="navbar-link" href="#relationships">Relationships</a></li>
-           <li class="navbar-item"><a class="navbar-link" href="#contact">Contact</a></li>
-         </ul>
-       </div>
-     </nav>
+        <div class="docs-section examples" id="contact">
+            <h6 class="docs-header">Contact</h6>
+            <div class="row">
+                <div class="three columns">
+                    <img class="example-screenshot" src="img/profile.png">
+                </div>
+                <div class="nine columns">
+                    <h6 class="example-header">村山 雅彦 murayama at code-d.jp</h6>
+                    <p class="example-description">
+                        フリーランスのプログラミング講師です。大阪を拠点にJava、PHP、Linuxを中心にWebシステムの開発からPythonによる深層学習・機械学習の開発まで幅広くやっています。仕事ではIT人材育成を中心に、ITを活用した個人の働き方改革について試行錯誤しています。仕事のご相談は上記のメールアドレスかFacebookメッセージで承ります。
+                    </p>
+                    <h6>書籍執筆・保有資格・その他の活動等</h6>
+                    <ul>
+                        <li><a href="https://www.amazon.co.jp/dp/4797334223" target="_blank">Amazon：SpringによるWebアプリケーションスーパーサンプル</a></li>
+                        <li><a href="https://www.udemy.com/course/code-php/?referralCode=E4D25BD099285A8CEC0B">Udemy：基礎だけ学ぶ PHPプログラミング講座</a></li>
+                        <li><a href="https://www.timeticket.jp/clips/26">タイムチケット：タイムチケットアワード2017 受賞</a></li>
+                        <li><a href="https://blog.timeticket.jp/post/186719300570/tta2019">タイムチケット：タイムチケットアワード2019 受賞</a></li>
+                        <li><a href="https://life.timeticket.jp/life/articles/25">タイムチケット：「プログラミングで働き方の選択肢を増やしたい」</a></li>
+                        <li><a href="https://www.jitec.ipa.go.jp/1_11seido/sa.html" target="_blank">資格：システムアーキテクト</a></li>
+                        <li><a href="https://www.phpexam.jp/summary/expert/" target="_blank">資格：PHP認定技術者試験上級</a></li>
+                        <li><a href="https://www.jdla.org/business/certificate/?id=certificate_No01" target="_blank">資格：JDLA認定試験 G検定</a></li>
+                        <li><a href="http://dl4us.com/" target="_blank">AI：DL4US（第2期）修了</a></li>
+                    </ul>
+                    <a class="button" href="https://www.facebook.com/murayama333" target="_blank">FB</a>
+                    <a class="button" href="https://twitter.com/murayama333" target="_blank">Twitter</a>
+                    <a class="button" href="http://murayama.hatenablog.com/" target="_blank">Blog</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
-     <div class="docs-section examples" id="works">
-       <h6 class="docs-header">Works</h6>
-       <div class="row works-row">
-         <div class="one-half column">
-           <img class="example-screenshot" src="img/gorimepresetV3_TP_V4.jpg">
-         </div>
-         <div class="one-half column">
-           <h6 class="example-header">IT人材の育成</h6>
-           <p class="example-description">ITエンジニアの育成や、ビジネスパーソン向けのプログラミング教育を実施しています。経済産業省のレポートには2030年にはIT人材が約59万人不足（最大79万人不足）するという報告もあり、少子高齢社会の進む日本においてIT人材の育成は急務です。プログラミング教育を通じて、仕事を自動化する楽しさを伝えながら、ITを活用できる人材を育成していきます。<br>
-           </p>
-         </div>
-       </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
 
-       <div class="row works-row">
-         <div class="one-half column">
-           <img class="example-screenshot" src="img/text.jpg">
-         </div>
-         <div class="one-half column">
-           <h6 class="example-header">プログラミング教材づくり</h6>
-           <p class="example-description">プログラミング学習に必要な教材（テキストや動画、問題集など）を提供しています。プログラミング初学者にとっての学びの敷居を下げるために短時間で効率よく学べる教材づくりをコンセプトにしています。<br>CODE-Dではプログラミング学習動画をUdemy、また再利用可能なテキスト教材をGitHubで公開しています。</p>
-           <a class="button" href="https://www.udemy.com/course/code-php/?referralCode=E4D25BD099285A8CEC0B" target="_blank">Udemy</a>
-           <a class="button" href="https://github.com/code-d-jp/" target="_blank">GitHub</a>
-         </div>
-       </div>
+            // Variables
+            var $codeSnippets = $('.code-example-body'),
+                $nav = $('.navbar'),
+                $body = $('body'),
+                $window = $(window),
+                $popoverLink = $('[data-popover]'),
+                navOffsetTop = $nav.offset().top,
+                $document = $(document),
+                entityMap = {
+                    "&": "&amp;",
+                    "<": "&lt;",
+                    ">": "&gt;",
+                    '"': '&quot;',
+                    "'": '&#39;',
+                    "/": '&#x2F;'
+                }
 
-       <div class="row works-row">
-         <div class="one-half column">
-           <img class="example-screenshot" src="img/app.png">
-         </div>
-         <div class="one-half column">
-           <h6 class="example-header">プログラミング学習サービス</h6>
-           <p class="example-description">オンラインでプログラミングを学ぶサービスを開発しています。2020年春頃のベータリリースに向けて開発を進めています。</p>
-           <a class="button" href="#" target="_blank" disabled style="text-decoration: line-through">Demo</a>
-           <p class="example-description">NEW : PHPの学習サイトができました。</p>
-           <a class="button" href="https://code-php.com/" target="_blank">CODE-PHP</a>
-         </div>
-       </div>
-     </div>
+            function init() {
+                $window.on('scroll', onScroll)
+                $window.on('resize', resize)
+                $popoverLink.on('click', openPopover)
+                $document.on('click', closePopover)
+                $('a[href^="#"]').on('click', smoothScroll)
+                buildSnippets();
+            }
 
-     <div class="docs-section examples" id="services">
-       <h6 class="docs-header">Services</h6>
-       <p>CODE-Dでは法人向けのプログラミング教育サービスと個人向けのプログラミング教育サービスを提供しています。</p>
-       <ul class="service-list">
-         <li>法人向けサービス</li>
-         <ul>
-           <li>教材開発</li>
-           <ul>
-             <li>研修企画に沿った教材を開発（提供）します。価格：¥0〜</li>
-           </ul>
-           <li>講師派遣</li>
-           <ul>
-             <li>Webシステム開発、機械学習の研修講師を派遣します。価格：¥100,000〜</li>
-           </ul>
-           <li>エンジニア教育</li>
-           <ul>
-             <li>開発現場において若手エンジニアの技術習得をサポートします。価格：要相談〜</li>
-           </ul>
-         </ul>
-         <li>個人向けサービス</li>
-         <ul>
-           <li>CODE-D ONLINE</li>
-           <ul>
-             <li>オンラインで学ぶプログラミング学習サービスです。価格：準備中</li>
-           </ul>
-           <li>CODE-D ENGINEER</li>
-           <ul>
-             <li>ITエンジニアへの転職を目的としたプログラミング学習支援サービスです。価格：準備中</li>
-           </ul>
-           <li>CODE-D ADHOC</li>
-           <ul>
-             <li>プログラミングの疑問・悩み相談などの1DAY学習支援サービスです。価格：¥10,000〜</li>
-           </ul>
-         </ul>
-       </ul>
+            function smoothScroll(e) {
+                e.preventDefault();
+                $(document).off("scroll");
+                var target = this.hash,
+                    menu = target;
+                $target = $(target);
+                $('html, body').stop().animate({
+                    'scrollTop': $target.offset().top - 40
+                }, 0, 'swing', function() {
+                    window.location.hash = target;
+                    $(document).on("scroll", onScroll);
+                });
+            }
 
-       <table class="u-full-width service-list">
-         <thead>
-           <tr>
-             <th>法人向けサービス</th>
-             <th>サービス概要</th>
-             <th>価格</th>
-           </tr>
-         </thead>
-         <tbody>
-           <tr>
-             <td>教材開発</td>
-             <td>プログラミング研修用の教材を開発（提供）します。</td>
-             <td>¥0〜</td>
-           </tr>
-           <tr>
-             <td>講師派遣</td>
-             <td>Webシステム開発、機械学習の研修講師を派遣します。</td>
-             <td>¥100,000〜</td>
-           </tr>
-           <tr>
-             <td>エンジニア教育</td>
-             <td>開発現場において若手エンジニアの技術習得をサポートします。</td>
-             <td>要相談</td>
-           </tr>
-         </tbody>
-       </table>
+            function openPopover(e) {
+                e.preventDefault()
+                closePopover();
+                var popover = $($(this).data('popover'));
+                popover.toggleClass('open')
+                e.stopImmediatePropagation();
+            }
 
-       <table class="u-full-width service-list">
-         <thead>
-           <tr>
-             <th>個人向けサービス</th>
-             <th>サービス概要</th>
-             <th>価格</th>
-           </tr>
-         </thead>
-         <tbody>
-           <tr>
-             <td width="140px">CODE-D ONLINE</td>
-             <td>オンラインで学ぶプログラミング学習サービスです。</td>
-             <td>準備中</td>
-           </tr>
-           <tr>
-             <td>CODE-D ENGINEER</td>
-             <td>ITエンジニアへの転職を目的としたプログラミング学習支援サービスです。</td>
-             <td>準備中</td>
-           </tr>
-           <tr>
-             <td>CODE-D ADHOC</td>
-             <td>プログラミングの疑問・悩み相談などの1DAY学習支援サービスです。</td>
-             <td>¥10,000〜</td>
-           </tr>
-         </tbody>
-       </table>
-     </div>
+            function closePopover(e) {
+                if ($('.popover.open').length > 0) {
+                    $('.popover').removeClass('open')
+                }
+            }
 
-     <div class="docs-section" id="relationships">
-       <h6 class="docs-header">Business Relationships</h6>
-       <div class="row">
-        <ul>
-          <li><a href="https://kronos.jp/" target="_blank">株式会社クロノス</a></li>
-          <ul>
-             <li><a href="https://www.kronos.jp/open-learning/" target="_blank">法人様向け 2019年度新入社員向け Javaエンジニア集合型研修 講師</a></li>
-          </ul>
-        </ul>
-       </div>
-     </div>
+            $("#button").click(function() {
+                $('html, body').animate({
+                    scrollTop: $("#elementtoScrollToID").offset().top
+                }, 2000);
+            });
 
-     <div class="docs-section examples" id="contact">
-       <h6 class="docs-header">Contact</h6>
-       <div class="row">
-         <div class="three columns">
-           <img class="example-screenshot" src="img/profile.png">
-         </div>
-         <div class="nine columns">
-           <h6 class="example-header">村山 雅彦 murayama at code-d.jp</h6>
-           <p class="example-description">
-             フリーランスのプログラミング講師です。大阪を拠点にJava、PHP、Linuxを中心にWebシステムの開発からPythonによる深層学習・機械学習の開発まで幅広くやっています。仕事ではIT人材育成を中心に、ITを活用した個人の働き方改革について試行錯誤しています。仕事のご相談は上記のメールアドレスかFacebookメッセージで承ります。
-           </p>
-           <h6>書籍執筆・保有資格・その他の活動等</h6>
-           <ul>
-             <li><a href="https://www.amazon.co.jp/dp/4797334223" target="_blank">Amazon：SpringによるWebアプリケーションスーパーサンプル</a></li>
-             <li><a href="https://www.udemy.com/course/code-php/?referralCode=E4D25BD099285A8CEC0B">Udemy：基礎だけ学ぶ PHPプログラミング講座</a></li>
-             <li><a href="http://dl4us.com/" target="_blank">AI：DL4US（第2期）修了</a></li>
-             <li><a href="https://www.timeticket.jp/clips/26">タイムチケット：タイムチケットアワード2017 受賞</a></li>
-             <li><a href="https://blog.timeticket.jp/post/186719300570/tta2019">タイムチケット：タイムチケットアワード2019 受賞</a></li>
-             <li><a href="https://life.timeticket.jp/life/articles/25">タイムチケット：「プログラミングで働き方の選択肢を増やしたい」</a></li>
-             <li><a href="https://www.jitec.ipa.go.jp/1_11seido/sa.html" target="_blank">資格：システムアーキテクト</a></li>
-             <li><a href="https://www.phpexam.jp/summary/expert/" target="_blank">資格：PHP認定技術者試験上級</a></li>
-             <li><a href="https://www.jdla.org/business/certificate/?id=certificate_No01" target="_blank">資格：JDLA認定試験 G検定</a></li>
-           </ul>
-           <a class="button" href="https://github.com/murayama333" target="_blank">GitHub</a>
-           <a class="button" href="https://www.facebook.com/murayama333" target="_blank">FB</a>
-           <a class="button" href="https://twitter.com/murayama333" target="_blank">Twitter</a>
-           <a class="button" href="http://murayama.hatenablog.com/" target="_blank">Blog</a>
-         </div>
-       </div>
-     </div>
-  </div>
+            function resize() {
+                $body.removeClass('has-docked-nav')
+                navOffsetTop = $nav.offset().top
+                onScroll()
+            }
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-  <script>
-    $(document).ready(function() {
+            function onScroll() {
+                if (navOffsetTop < $window.scrollTop() && !$body.hasClass('has-docked-nav')) {
+                    $body.addClass('has-docked-nav')
+                }
+                if (navOffsetTop > $window.scrollTop() && $body.hasClass('has-docked-nav')) {
+                    $body.removeClass('has-docked-nav')
+                }
+            }
 
-      // Variables
-      var $codeSnippets = $('.code-example-body'),
-          $nav = $('.navbar'),
-          $body = $('body'),
-          $window = $(window),
-          $popoverLink = $('[data-popover]'),
-          navOffsetTop = $nav.offset().top,
-          $document = $(document),
-          entityMap = {
-            "&": "&amp;",
-            "<": "&lt;",
-            ">": "&gt;",
-            '"': '&quot;',
-            "'": '&#39;',
-            "/": '&#x2F;'
-          }
+            function escapeHtml(string) {
+                return String(string).replace(/[&<>"'\/]/g, function(s) {
+                    return entityMap[s];
+                });
+            }
 
-      function init() {
-        $window.on('scroll', onScroll)
-        $window.on('resize', resize)
-        $popoverLink.on('click', openPopover)
-        $document.on('click', closePopover)
-        $('a[href^="#"]').on('click', smoothScroll)
-        buildSnippets();
-      }
-
-      function smoothScroll(e) {
-        e.preventDefault();
-        $(document).off("scroll");
-        var target = this.hash,
-            menu = target;
-        $target = $(target);
-        $('html, body').stop().animate({
-            'scrollTop': $target.offset().top-40
-        }, 0, 'swing', function () {
-            window.location.hash = target;
-            $(document).on("scroll", onScroll);
+            function buildSnippets() {
+                $codeSnippets.each(function() {
+                    var newContent = escapeHtml($(this).html())
+                    $(this).html(newContent)
+                })
+            }
+            init();
         });
-      }
-
-      function openPopover(e) {
-        e.preventDefault()
-        closePopover();
-        var popover = $($(this).data('popover'));
-        popover.toggleClass('open')
-        e.stopImmediatePropagation();
-      }
-
-      function closePopover(e) {
-        if($('.popover.open').length > 0) {
-          $('.popover').removeClass('open')
-        }
-      }
-
-      $("#button").click(function() {
-        $('html, body').animate({
-            scrollTop: $("#elementtoScrollToID").offset().top
-        }, 2000);
-    });
-
-      function resize() {
-        $body.removeClass('has-docked-nav')
-        navOffsetTop = $nav.offset().top
-        onScroll()
-      }
-
-      function onScroll() {
-        if(navOffsetTop < $window.scrollTop() && !$body.hasClass('has-docked-nav')) {
-          $body.addClass('has-docked-nav')
-        }
-        if(navOffsetTop > $window.scrollTop() && $body.hasClass('has-docked-nav')) {
-          $body.removeClass('has-docked-nav')
-        }
-      }
-
-      function escapeHtml(string) {
-        return String(string).replace(/[&<>"'\/]/g, function (s) {
-          return entityMap[s];
-        });
-      }
-
-      function buildSnippets() {
-        $codeSnippets.each(function() {
-          var newContent = escapeHtml($(this).html())
-          $(this).html(newContent)
-        })
-      }
-      init();
-    });
-  </script>
+    </script>
 
 </body>
+
 </html>
