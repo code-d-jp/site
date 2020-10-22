@@ -136,7 +136,12 @@
             width: 100%;
             height: auto;
         }
-        
+
+        .example-screenshot.profile {
+            width: 50%;
+            height: auto;
+        }
+
         .example-screenshot.coming-soon {
             width: auto;
             position: absolute;
@@ -157,6 +162,7 @@
         /* Larger than phone */
         
         @media (min-width: 550px) {
+
             .header {
                 margin-top: 18rem;
             }
@@ -185,16 +191,26 @@
                 left: 0;
                 max-height: none;
             }
+
             table.service-list {
                 display: table;
             }
             ul.service-list {
                 display: none;
             }
+
+
         }
         /* Larger than tablet */
         
         @media (min-width: 750px) {
+
+            .example-screenshot.profile {
+                width: 100%;
+                height: auto;
+                
+            }
+
             /* Navbar */
             .navbar+.docs-section {
                 border-top-width: 0;
@@ -364,6 +380,18 @@
             </div>
         </nav>
 
+        <div class="docs-section examples" id="vision">
+            <h6 class="docs-header">Vision</h6>
+            <div class="row works-row">
+                <div class="twelve column">
+                    <h6 class="example-header">人とコンピュータの調和した社会づくり</h6>
+                    <p class="example-description" style="padding-top: 1rem;">
+                        一人ひとりに寄り添うプログラミング教育を通じて、人とコンピュータの調和した社会づくりを目指します。
+                    </p>
+                </div>
+            </div>
+        </div>
+
         <div class="docs-section examples" id="works">
             <h6 class="docs-header">Works</h6>
             <div class="row works-row">
@@ -390,19 +418,19 @@
 
             <div class="row works-row">
                 <div class="one-half column">
-                    <img class="example-screenshot" src="img/app.png">
+                    <img class="example-screenshot" src="img/code-php.png" style="border: 1px solid #eee">
                 </div>
                 <div class="one-half column">
                     <h6 class="example-header">プログラミング学習サービス</h6>
-                    <p class="example-description">オンラインでプログラミングを学ぶサービスを開発しています。2021年春頃のベータリリースに向けて開発を進めています。</p>
-                    <a class="button" href="#" target="_blank" disabled style="text-decoration: line-through">Demo</a>
+                    <p class="example-description">様々なオンラインで利用できるプログラミング学習サービスを開発しています。<br>CODE-PHPは、PHP初学者のために開発した 小さなテキストで多くのことを 学べるPHP学習サイトです。</p>
+                    <a class="button" href="https://code-php.com/" target="_blank" >CODE-PHP</a>
                 </div>
             </div>
         </div>
 
         <div class="docs-section examples" id="services">
             <h6 class="docs-header">Services</h6>
-            <p>CODE-Dでは法人向けのプログラミング教育サービスと個人向けのプログラミング教育サービスを提供しています。</p>
+            <p>法人向けのプログラミング教育サービスを提供しています。予算に合わせた学習内容を提案させて頂きます。</p>
             <ul class="service-list">
                 <li>法人向けサービス</li>
                 <ul>
@@ -412,26 +440,11 @@
                     </ul>
                     <li>講師派遣</li>
                     <ul>
-                        <li>Webシステム開発、機械学習の研修講師を派遣します。価格：¥100,000〜</li>
+                        <li>Webシステム開発、機械学習の研修講師を派遣します。価格：価格：要相談〜</li>
                     </ul>
                     <li>エンジニア教育</li>
                     <ul>
                         <li>開発現場において若手エンジニアの技術習得をサポートします。価格：要相談〜</li>
-                    </ul>
-                </ul>
-                <li>個人向けサービス</li>
-                <ul>
-                    <li>CODE-D ONLINE</li>
-                    <ul>
-                        <li>オンラインで学ぶプログラミング学習サービスです。価格：準備中</li>
-                    </ul>
-                    <li>CODE-D ENGINEER</li>
-                    <ul>
-                        <li>ITエンジニアへの転職を目的としたプログラミング学習支援サービスです。価格：準備中</li>
-                    </ul>
-                    <li>CODE-D ADHOC</li>
-                    <ul>
-                        <li>プログラミングの疑問・悩み相談などの1DAY学習支援サービスです。価格：¥10,000〜</li>
                     </ul>
                 </ul>
             </ul>
@@ -453,39 +466,12 @@
                     <tr>
                         <td>講師派遣</td>
                         <td>Webシステム開発、機械学習の研修講師を派遣します。</td>
-                        <td>¥100,000〜</td>
+                        <td>要相談</td>
                     </tr>
                     <tr>
                         <td>エンジニア教育</td>
                         <td>開発現場において若手エンジニアの技術習得をサポートします。</td>
                         <td>要相談</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <table class="u-full-width service-list">
-                <thead>
-                    <tr>
-                        <th>個人向けサービス</th>
-                        <th>サービス概要</th>
-                        <th>価格</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td width="140px">CODE-D ONLINE</td>
-                        <td>オンラインで学ぶプログラミング学習サービスです。</td>
-                        <td>準備中</td>
-                    </tr>
-                    <tr>
-                        <td>CODE-D ENGINEER</td>
-                        <td>ITエンジニアへの転職を目的としたプログラミング学習支援サービスです。</td>
-                        <td>準備中</td>
-                    </tr>
-                    <tr>
-                        <td>CODE-D ADHOC</td>
-                        <td>プログラミングの疑問・悩み相談などの1DAY学習支援サービスです。</td>
-                        <td>¥10,000〜</td>
                     </tr>
                 </tbody>
             </table>
@@ -497,7 +483,8 @@
                 <ul>
                     <li><a href="https://kronos.jp/" target="_blank">株式会社クロノス</a></li>
                     <ul>
-                        <li><a href="https://www.kronos.jp/open-learning/" target="_blank">法人様向け 2019年度新入社員向け Javaエンジニア集合型研修 講師</a></li>
+                        <li>法人様向け 2020年度新入社員向け Javaエンジニア集合型研修 講師</li>
+                        <li>法人様向け 2019年度新入社員向け Javaエンジニア集合型研修 講師</li>
                     </ul>
                 </ul>
             </div>
@@ -507,12 +494,12 @@
             <h6 class="docs-header">Contact</h6>
             <div class="row">
                 <div class="three columns">
-                    <img class="example-screenshot" src="img/profile.png">
+                    <img class="example-screenshot profile" src="img/profile.png">
                 </div>
                 <div class="nine columns">
                     <h6 class="example-header">村山 雅彦 murayama at code-d.jp</h6>
                     <p class="example-description">
-                        フリーランスのプログラミング講師です。大阪を拠点にJava、PHP、Linuxを中心にWebシステムの開発からPythonによる深層学習・機械学習の開発まで幅広くやっています。仕事ではIT人材育成を中心に、ITを活用した個人の働き方改革について試行錯誤しています。仕事のご相談は上記のメールアドレスかFacebookメッセージで承ります。
+                        フリーランスのプログラミング講師です。大阪を拠点にJava、PHP、Linuxを中心にWebシステムの開発からPythonによる深層学習・機械学習の開発まで幅広くやっています。最近はUdemyでの動画づくりにも取り組んでいます。仕事のご相談は上記のメールアドレスかFacebookメッセージで承ります。
                     </p>
                     <h6>書籍執筆・保有資格・その他の活動等</h6>
                     <ul>
@@ -526,9 +513,8 @@
                         <li><a href="https://www.jdla.org/business/certificate/?id=certificate_No01" target="_blank">資格：JDLA認定試験 G検定</a></li>
                         <li><a href="http://dl4us.com/" target="_blank">AI：DL4US（第2期）修了</a></li>
                     </ul>
-                    <a class="button" href="https://www.facebook.com/murayama333" target="_blank">FB</a>
+                    <a class="button" href="https://www.facebook.com/murayama333" target="_blank">Facebook</a>
                     <a class="button" href="https://twitter.com/murayama333" target="_blank">Twitter</a>
-                    <a class="button" href="http://murayama.hatenablog.com/" target="_blank">Blog</a>
                 </div>
             </div>
         </div>
